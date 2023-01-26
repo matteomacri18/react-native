@@ -1,24 +1,41 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+// IMPORT Flatlist = RecyclerView
+import {
+  Flatlist,
+  Button,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { StatusBar } from "expo-status-bar";
 
 // HOOK => mutableStateOf()
 // IMPORT useState
 import { useState } from "react";
 export default function App() {
-  const [name, setName] = useState("Mash");
-  const [session, setSession] = useState({ number: 6, title: "state" });
-  const [current, setCurrent] = useState(true);
+  // Array of objs with state
+  const [Items, setItems] = useState([
+    { key: 1, item: "Item 1" },
+    { key: 2, item: "Item 2" },
+    { key: 3, item: "Item 3" },
+  ]);
 
-  const onClickHandler = () => {
-    setName("Programming with me");
-    setSession({ number: 7, title: "Style" });
-    setCurrent(false);
-  };
+  // Array of objs no state
+  const animals = [
+    { id: 1, name: "Shark" },
+    { id: 2, name: "Lampo" },
+    { id: 3, name: "Dog" },
+    { id: 4, name: "Lmao" },
+  ];
+
+  // lambda, input animal output Text animal's name
+  const animal = ({ item }) => <Text style={styles.text}>{item.name}</Text>;
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{name}</Text>
-      <Button title="Change" onPress={onClickHandler}></Button>
+      <View style={styles.item}>
+        <FlatList data={animals} renderItem={animal} />
+      </View>
     </View>
   );
 }
@@ -28,6 +45,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#854D27",
     alignItems: "center",
+    justifyContent: "center",
+  },
+  item: {
+    backgroundColor: "#4ae1fa",
     justifyContent: "center",
   },
   text: {
