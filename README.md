@@ -1,3 +1,5 @@
+# LOOK OTHER BRANCHES FOR DIFFERENT THINGS
+
 # PROJECT STRUCTURE
 * ```assets:``` Asset folder to store all images, vectors, fonts, etc.
 * ```src:``` This folder is the main container of all the code inside your application.
