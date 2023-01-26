@@ -26,16 +26,28 @@ export default function App() {
     { id: 2, name: "Lampo" },
     { id: 3, name: "Dog" },
     { id: 4, name: "Lmao" },
+    { id: 5, name: "Shark" },
+    { id: 6, name: "Lampo" },
+    { id: 7, name: "Dog" },
+    { id: 8, name: "Lmao" },
+    { id: 9, name: "Shark" },
+    { id: 10, name: "Lampo" },
+    { id: 11, name: "Dog" },
+    { id: 12, name: "Lmao" },
   ];
 
+  const nothing = () => {};
+
   // lambda, input animal output Text animal's name
-  const animal = ({ item }) => <Text style={styles.text}>{item.name}</Text>;
+  const animal = ({ item }) => (
+    <Text style={styles.text} onPress={nothing}>
+      {item.name}
+    </Text>
+  );
 
   return (
     <View style={styles.container}>
-      <View style={styles.item}>
-        <FlatList data={animals} renderItem={animal} />
-      </View>
+      <FlatList horizontal data={animals} renderItem={animal}/>
     </View>
   );
 }
@@ -44,8 +56,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#854D27",
-    alignItems: "center",
-    justifyContent: "center",
   },
   item: {
     backgroundColor: "#4ae1fa",
