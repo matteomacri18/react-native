@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
+import MashButton from "./CustomComponent";
 
 export default function App() {
   const [name, setName] = useState("");
@@ -26,7 +27,8 @@ export default function App() {
       Alert.alert(
         "Warning", // title
         "Name must be longer than 3 chars", // mex
-        [ // max three buttons 
+        [
+          // max three buttons
           {
             text: "Ok",
             onPress: () => console.warn("Ok Pressed!"),
@@ -44,7 +46,7 @@ export default function App() {
           },
         ],
         { cancelable: true } // option for the dialog
-      ); 
+      );
     }
   };
 
@@ -58,10 +60,14 @@ export default function App() {
         placeholder="e.g John"
         onChangeText={changeText}
       />
-      <Button title={submitted ? "Clear" : "Submit"} onPress={onPressHandler} />
-      {/* <TouchableOpacity>
+      {/* <Button title={submitted ? "Clear" : "Submit"} onPress={onPressHandler} />
+      { <TouchableOpacity>}
         inside we have elements we want to make clickable like button
       </TouchableOpacity> */}
+
+      {/* component */}
+      <MashButton onPressHandler={onPressHandler} title={name} />
+
       {submitted ? <Text style={styles.text}>Your name is: {name}</Text> : null}
     </View>
   );
