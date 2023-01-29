@@ -1,19 +1,20 @@
-import {
-  Image,
-  Button,
-  FlatList,
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Alert,
-} from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
-import MashButton from "./CustomComponent";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { StyleSheet, SafeAreaView } from "react-native";
+import HomeScreen from "./screens/HomeScreen";
+import SecondScreen from "./screens/SecondScreen";
 
 export default function App() {
-  return <View style={styles.container}></View>;
+  const Stack = createNativeStackNavigator();
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="SecondScreen" component={SecondScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -21,6 +22,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ffffff",
     alignItems: "center",
+    justifyContent: "center",
     padding: 20,
   },
 });
