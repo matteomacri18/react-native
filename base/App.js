@@ -1,24 +1,39 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-// HOOK => mutableStateOf()
-// IMPORT useState
-import { useState } from "react";
-export default function App() {
-  const [name, setName] = useState("Mash");
-  const [session, setSession] = useState({ number: 6, title: "state" });
-  const [current, setCurrent] = useState(true);
+interface Data {
+  artist: string;
+  artist_url: string;
+  error: string;
+  source_url: string;
+  url: string;
+}
 
-  const onClickHandler = () => {
-    setName("Programming with me");
-    setSession({ number: 7, title: "Style" });
-    setCurrent(false);
+export default function App() {
+
+  const [count, setCount] = React.useState(0);
+  const [bool, setBool] = React.useState(false);
+
+  const [data, setData] = React.useState<Data>();
+
+  const API = () => {
+    fetch('https://api.catboys.com/img', { method: 'GET' })
+      .then((response) => response.json())
+      .then((res) => {
+        setData(res);
+        console.log(res);
+      }).catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{name}</Text>
-      <Button title="Change" onPress={onClickHandler}></Button>
+      <Text>API TEST</Text>
+      <Text>{data?.artist}</Text>
+      <Text>{data?.artist_url}</Text>
+      <Pressable style={styles.button} onPress={() => API()}><Text>fetch</Text></Pressable>
+      <StatusBar style="auto" />
     </View>
   );
 }
