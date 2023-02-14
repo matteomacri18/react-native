@@ -9,15 +9,15 @@ interface Data {
   url: string;
 }
 
+interface Dog {
+  message: string;
+}
+
 export default function App() {
-
-  const [count, setCount] = React.useState(0);
-  const [bool, setBool] = React.useState(false);
-
-  const [data, setData] = React.useState<Data>();
+  const [data, setData] = React.useState<Dog>();
 
   const API = () => {
-    fetch('https://api.catboys.com/img', { method: 'GET' })
+    fetch('https://dog.ceo/api/breeds/image/random', { method: 'GET' })
       .then((response) => response.json())
       .then((res) => {
         setData(res);
@@ -28,13 +28,30 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.container1}>
+        <Image
+          style={styles.imgFixed}
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}
+        />
+      </View>
       <Text>API TEST</Text>
-      <Text>{data?.artist}</Text>
-      <Text>{data?.artist_url}</Text>
-      <Pressable style={styles.button} onPress={() => API()}><Text>fetch</Text></Pressable>
+      {/* <Text style={styles.title}>{data?.message}</Text>
+      <Text style={styles.subtitle}>{data?.artist_url}</Text>
+      <Text>{data?.url}</Text> */}
+      <Image
+          style={styles.imgDog}
+          source={{
+            uri: data?.message,
+          }}
+        />
+      <TouchableHighlight underlayColor={'#DDD'} style={styles.button} onPress={() => API()}>
+        <Text>Fetch</Text>
+      </TouchableHighlight>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
