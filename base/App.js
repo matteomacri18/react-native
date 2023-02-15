@@ -26,6 +26,12 @@ export default function App() {
         console.log(err);
       });
   };
+  
+  // if we want await the request we have to implement an async function
+  // 'cause only await can be called by async function
+  const API async = () => {
+    const request await = fetch();  
+  }
 
   return (
     <SafeAreaView style={styles.container}>
