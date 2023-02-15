@@ -34,10 +34,9 @@ Hooks are a more flexible and powerful way to handle state and lifecycle methods
 ```
 
 ## Main topics
-```
 There are several main topics to be aware of when working with React Native:
 
-```Components:v React Native components are the building blocks of a React Native app. They are used to build the UI and structure of the app. You can use built-in components such as View, Text, and Image, or create your own custom components.
+```Components:``` React Native components are the building blocks of a React Native app. They are used to build the UI and structure of the app. You can use built-in components such as View, Text, and Image, or create your own custom components.
 
 ```Props:``` Props are used to pass data from a parent component to a child component. They are used to customize and configure a component when it is created.
 
@@ -56,6 +55,5 @@ There are several main topics to be aware of when working with React Native:
 ```Debugging and testing:``` React Native provides tools and libraries that can be used to debug and test apps. Examples include the React Developer Tools and Jest.
 
 ```Platform specific code:``` React Native allows you to write platform-specific code, so you can create a unique experience for each platform while still sharing most of the codebase.
-```
 
 
