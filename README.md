@@ -37,25 +37,25 @@ Hooks are a more flexible and powerful way to handle state and lifecycle methods
 ```
 There are several main topics to be aware of when working with React Native:
 
-Components: React Native components are the building blocks of a React Native app. They are used to build the UI and structure of the app. You can use built-in components such as View, Text, and Image, or create your own custom components.
+```Components:v React Native components are the building blocks of a React Native app. They are used to build the UI and structure of the app. You can use built-in components such as View, Text, and Image, or create your own custom components.
 
-Props: Props are used to pass data from a parent component to a child component. They are used to customize and configure a component when it is created.
+```Props:``` Props are used to pass data from a parent component to a child component. They are used to customize and configure a component when it is created.
 
-State: State is used to store and manage the data that is used to render a component. State can be updated, and when it changes, the component will re-render with the updated data.
+```State:``` State is used to store and manage the data that is used to render a component. State can be updated, and when it changes, the component will re-render with the updated data.
 
-Navigation: React Native provides built-in navigation components, such as StackNavigator and TabNavigator, that can be used to handle navigation between screens in an app.
+```Navigation:``` React Native provides built-in navigation components, such as StackNavigator and TabNavigator, that can be used to handle navigation between screens in an app.
 
-Styling: React Native provides a way to style components using a subset of CSS properties. You can use inline styles or style sheets to style components.
+```Styling:``` React Native provides a way to style components using a subset of CSS properties. You can use inline styles or style sheets to style components.
 
-Networking: React Native provides built-in support for fetching data from a server using the fetch API. You can also use libraries such as axios to make network requests.
+```Networking:``` React Native provides built-in support for fetching data from a server using the fetch API. You can also use libraries such as axios to make network requests.
 
-Lifecycle methods: React Native components have lifecycle methods that are called at different points in the component's lifecycle. These methods can be used to perform actions such as fetching data or setting up timers when the component is created or updated.
+```Lifecycle methods:``` React Native components have lifecycle methods that are called at different points in the component's lifecycle. These methods can be used to perform actions such as fetching data or setting up timers when the component is created or updated.
 
-Hooks: Hooks are a way to handle state and side-effects in functional components. They allow you to use state and other React features in functional components, and make it easier to reuse stateful logic between components.
+```Hooks:``` Hooks are a way to handle state and side-effects in functional components. They allow you to use state and other React features in functional components, and make it easier to reuse stateful logic between components.
 
-Debugging and testing: React Native provides tools and libraries that can be used to debug and test apps. Examples include the React Developer Tools and Jest.
+```Debugging and testing:``` React Native provides tools and libraries that can be used to debug and test apps. Examples include the React Developer Tools and Jest.
 
-Platform specific code: React Native allows you to write platform-specific code, so you can create a unique experience for each platform while still sharing most of the codebase.
+```Platform specific code:``` React Native allows you to write platform-specific code, so you can create a unique experience for each platform while still sharing most of the codebase.
 ```
 
 
