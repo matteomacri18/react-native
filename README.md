@@ -57,3 +57,8 @@ There are several main topics to be aware of when working with React Native:
 ```Platform specific code:``` React Native allows you to write platform-specific code, so you can create a unique experience for each platform while still sharing most of the codebase.
 
 
+# HOOKS
+```
+
+```
+
